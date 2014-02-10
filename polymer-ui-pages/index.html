@@ -1,34 +1,64 @@
 <!doctype html>
-<!--
-Copyright 2013 The Polymer Authors. All rights reserved.
-Use of this source code is governed by a BSD-style
-license that can be found in the LICENSE file.
--->
-<html class="polymer-ui-full-bleed">
-  <head>
-    <title>polymer-ui-pages</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <!-- load toolkit -->
-    <script src="../platform/platform.js"></script>
-    <!-- import elements-->
-    <link rel="import" href="polymer-ui-pages.html">
-    <!-- -->
-    <link rel="stylesheet" href="../polymer-ui-elements/basic.css">
-  </head>
-  <body class="polymer-ui-body-text polymer-ui-full-bleed">
-    <polymer-ui-pages selected="0">
-      <span>One</span>
-      <span>Two</span>
-      <span>Three</span>
-      <span>Four</span>
-      <span>Five</span>
-    </polymer-ui-pages>
-    <script>
-      document.body.onclick = function(e) {
-        var p = document.querySelector('polymer-ui-pages');
-        p.selected = (p.selected + 1) % 5;
-      }
-    </script>
-  </body>
+<html>
+<head>
+  <title>polymer api</title>
+  <style>
+    html, body {
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    [noviewer] [ifnoviewer] {
+      display: block;
+    }
+    [detector], [ifnoviewer], [noviewer] [ifviewer] {
+      display: none;
+    }
+    [ifviewer], [ifnoviewer] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    iframe {
+      border: none;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #remote {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="../polymer-home-page/polymer-home-page.html">
+</head>
+<body>
+  <img detector src="../polymer-home-page/bowager-logo.png" onerror="noviewer()">
+  <polymer-home-page ifviewer></polymer-home-page>
+  <div ifnoviewer>
+    <span id="remote">[remote]</span>
+    <iframe></iframe>
+  </div>
+  <!-- -->
+  <script>
+    var remoteDocs = 'http://turbogadgetry.com/bowertopia/components/';
+    // if no local info viewer, load it remotely
+    function noviewer() {
+      document.body.setAttribute('noviewer', '');
+      var path = location.pathname.split('/');
+      var module = path.pop() || path.pop();
+      document.querySelector('iframe').src = remoteDocs + module;
+      document.querySelector('title').textContent = module;
+    }
+    // for testing only
+    var opts = window.location.search;
+    if (opts.indexOf('noviewer') >= 0) {
+      noviewer();
+    }
+  </script>
+</body>
 </html>

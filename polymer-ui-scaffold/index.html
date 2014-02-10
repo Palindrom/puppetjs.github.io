@@ -1,100 +1,64 @@
 <!doctype html>
 <html>
-  <head>
-    <title>polymer-ui-scaffold</title>
-    <script src="../platform/platform.js"></script>
-    <link rel="import" href="polymer-ui-scaffold.html">
-    <link rel="import" href="../polymer-ui-icon-button/polymer-ui-icon-button.html">
-    <link rel="import" href="../polymer-ui-menu-item/polymer-ui-menu-item.html">
-    <link rel="import" href="../polymer-ui-menu-button/polymer-ui-menu-button.html">
-    <link rel="import" href="../polymer-ui-sidebar-menu/polymer-ui-sidebar-menu.html">
-    <style>
-      body {
-        font-family: Neue Helvetica, Roboto, Arial;
-      }
-      [main] {
-        padding: 8px;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        border: 3px solid magenta;
-      }
-      [navigation] {
-        width: 256px;
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <h2>scaffold</h2>
-    <polymer-ui-scaffold theme="polymer-ui-dark-theme" style="display: block; position: relative; height: 400px;">
-
-      <div tool flex>Title</div>
-      <polymer-ui-icon-button tool icon="briefcase"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="marker"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="account"></polymer-ui-icon-button>
-      <polymer-ui-menu-button tool icon="dots" Xtheme="polymer-ui-light-theme" halign="right">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-menu-button>
-
-      <div main>
-        Content.
-      </div>
-
-      <polymer-ui-sidebar-menu navigation label="Navigimation" offscreen="basement">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-sidebar-menu>
-
-    </polymer-ui-scaffold>
-
-    <h2>scaffold2 (same content)</h2>
-    <polymer-ui-scaffold2 theme="polymer-ui-dark-theme" style="display: block; position: relative; height: 400px;">
-
-      <div tool flex>Title</div>
-      <polymer-ui-icon-button tool icon="briefcase"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="marker"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="account"></polymer-ui-icon-button>
-      <polymer-ui-menu-button tool icon="dots" Xtheme="polymer-ui-light-theme" halign="right">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-menu-button>
-
-      <div main>
-        Content.
-      </div>
-
-      <polymer-ui-sidebar-menu navigation label="Navigimation" offscreen="basement">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-sidebar-menu>
-
-    </polymer-ui-scaffold2>
-    
-    <h2>scaffold3 (same content)</h2>
-    <polymer-ui-scaffold3 theme="polymer-ui-dark-theme" style="display: block; position: relative; height: 400px;">
-
-      <div tool flex>Title</div>
-      <polymer-ui-icon-button tool icon="briefcase"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="marker"></polymer-ui-icon-button>
-      <polymer-ui-icon-button tool icon="account"></polymer-ui-icon-button>
-      <polymer-ui-menu-button tool icon="dots" Xtheme="polymer-ui-light-theme" halign="right">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-menu-button>
-
-      <div main>
-        Content.
-      </div>
-
-      <polymer-ui-sidebar-menu navigation label="Navigimation" offscreen="basement">
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-        <polymer-ui-menu-item>Item</polymer-ui-menu-item>
-      </polymer-ui-sidebar-menu>
-
-    </polymer-ui-scaffold3>
-  </body>
+<head>
+  <title>polymer api</title>
+  <style>
+    html, body {
+      font-family: Arial, sans-serif;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    [noviewer] [ifnoviewer] {
+      display: block;
+    }
+    [detector], [ifnoviewer], [noviewer] [ifviewer] {
+      display: none;
+    }
+    [ifviewer], [ifnoviewer] {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    iframe {
+      border: none;
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+    #remote {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  </style>
+  <script src="../platform/platform.js"></script>
+  <link rel="import" href="../polymer-home-page/polymer-home-page.html">
+</head>
+<body>
+  <img detector src="../polymer-home-page/bowager-logo.png" onerror="noviewer()">
+  <polymer-home-page ifviewer></polymer-home-page>
+  <div ifnoviewer>
+    <span id="remote">[remote]</span>
+    <iframe></iframe>
+  </div>
+  <!-- -->
+  <script>
+    var remoteDocs = 'http://turbogadgetry.com/bowertopia/components/';
+    // if no local info viewer, load it remotely
+    function noviewer() {
+      document.body.setAttribute('noviewer', '');
+      var path = location.pathname.split('/');
+      var module = path.pop() || path.pop();
+      document.querySelector('iframe').src = remoteDocs + module;
+      document.querySelector('title').textContent = module;
+    }
+    // for testing only
+    var opts = window.location.search;
+    if (opts.indexOf('noviewer') >= 0) {
+      noviewer();
+    }
+  </script>
+</body>
 </html>
