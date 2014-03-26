@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/web-animations/web-animations-js.png?branch=master)](https://travis-ci.org/web-animations/web-animations-js)
+
+Latest specification at http://dev.w3.org/fxtf/web-animations/.
+
 ## Learn the tech
 
 ### Why Web Animations?
@@ -43,7 +47,7 @@ The Web Animations model is a description of an engine for animation content on 
 
 Web Animations also exposes a JS API to the model. This API defines a number of
 new interfaces that are exposed to JavaScript. We'll go through some of the more
-important ones here: Animations, AnimationEffects, TimingDictionaries, TimingGroups, and Players.
+important ones here: Animations, AnimationEffects, TimingDictionaries, TimingGroups, and AnimationPlayers.
 
 An `Animation` object defines a single animation effect that applies to a single element target. For example:
 
@@ -59,7 +63,7 @@ modified by an animation, and the values that those properties and attributes
 vary between. AnimationEffect objects also control whether the effect replaces
 or adds to the underlying value.
 
-There are three major kinds of effects: `KeyframeEffect`, `MotionPathEffect`, and `CustomAnimationEffect`.
+There are three major kinds of effects: `KeyframeEffect`, `MotionPathEffect`, and `EffectCallback`.
 
 #### Animating between keyframes
 
@@ -99,7 +103,7 @@ A `MotionPathEffect` allows elements to be animated along SVG-style paths. For e
 
 #### Custom animation effects
 
-A `CustomAnimationEffect` allows animations to generate call-outs to JavaScript
+An `EffectCallback` allows animations to generate call-outs to JavaScript
 rather than manipulating properties directly. Please see the
 [specification](http://www.w3.org/TR/web-animations/#custom-effects) for more details on this
 feature.
@@ -177,13 +181,13 @@ calculated duration of the max (`duration + delay`) of its children - in this ca
 
 ### Playing Animations
 
-In order to play an `Animation` or `TimingGroup`, a `Player` must be constructed:
+In order to play an `Animation` or `TimingGroup`, an `AnimationPlayer` must be constructed:
 
     var player = document.timeline.play(myAnimation);
 
-Players provide complete control the start time and current playback head of their attached animation. However, players can't modify any internal details of an animation.
+AnimationPlayers provide complete control the start time and current playback head of their attached animation. However, players can't modify any internal details of an animation.
 
-Players can be used to pause, seek, reverse, or modify the playback rate of an animation.
+AnimationPlayers can be used to pause, seek, reverse, or modify the playback rate of an animation.
 
 `document.timeline.currentTime` is a timeline's global time. It gives the number
 of seconds since the document fired its load event.
@@ -224,4 +228,4 @@ then the polyfill will provide a console warning in browsers where these feature
 ## Tools & testing
 
 For running tests or building minified files, consult the
-[tooling information](http://www.polymer-project.org/tooling-strategy.html).
+[tooling information](http://www.polymer-project.org/resources/tooling-strategy.html).

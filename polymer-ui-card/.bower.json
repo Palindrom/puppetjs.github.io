@@ -2,17 +2,17 @@
   "name": "polymer-ui-card",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#0.2.0"
+    "polymer": "Polymer/polymer#0.2.1"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/Polymer/polymer-ui-card",
-  "_release": "0.2.0",
+  "_release": "0.2.1",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.0",
-    "commit": "878ec816439ce9746de94fec85297048b907f256"
+    "tag": "0.2.1",
+    "commit": "d387032399a4a3cc3193ff451dc4411dd357177b"
   },
   "_source": "git://github.com/Polymer/polymer-ui-card.git",
-  "_target": "0.2.0",
+  "_target": "0.2.1",
   "_originalSource": "Polymer/polymer-ui-card"
 }

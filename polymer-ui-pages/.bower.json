@@ -2,18 +2,18 @@
   "name": "polymer-ui-pages",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#0.2.0",
-    "polymer-selector": "Polymer/polymer-selector#0.2.0"
+    "polymer": "Polymer/polymer#0.2.1",
+    "polymer-selector": "Polymer/polymer-selector#0.2.1"
   },
-  "version": "0.2.0",
+  "version": "0.2.1",
   "homepage": "https://github.com/Polymer/polymer-ui-pages",
-  "_release": "0.2.0",
+  "_release": "0.2.1",
   "_resolution": {
     "type": "version",
-    "tag": "0.2.0",
-    "commit": "bdada41d694bb07945bfc8100eddbb67ace7d4fc"
+    "tag": "0.2.1",
+    "commit": "1a5a153f8c6d15f28f520264e1e7ef0708ab7f0b"
   },
   "_source": "git://github.com/Polymer/polymer-ui-pages.git",
-  "_target": "0.2.0",
+  "_target": "0.2.1",
   "_originalSource": "Polymer/polymer-ui-pages"
 }
