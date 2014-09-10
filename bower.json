@@ -2,7 +2,8 @@
   "name": "puppetjs.github.io",
   "private": true,
   "dependencies": {
-    "polymer-ui-elements": "Polymer/polymer-ui-elements#~0.2",
+    "polymer": "Polymer/polymer#~0.4.0",
+    "model-operations": "Polyjuice/model-operations#~0.0.1",
     "fast-json-patch": "~0.3.6"
   }
 }
