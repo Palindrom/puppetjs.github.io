@@ -8,6 +8,8 @@
     "json-patch-queue": "PuppetJs/JSON-Patch-queue#gh-pages",
     "json-patch-ot": "PuppetJs/JSON-Patch-OT#gh-pages",
     "json-patch-ot-agent": "PuppetJs/JSON-Patch-OT-agent#gh-pages",
-    "web-component-tester": "^4.2.2"
+    "web-component-tester": "^4.2.2",
+    "jasmine-core": "jasmine#^2.4.1",
+    "jasmine-ajax": "^3.2.0"
   }
 }
