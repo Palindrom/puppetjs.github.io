@@ -2,11 +2,12 @@
   "name": "puppetjs.github.io",
   "private": true,
   "dependencies": {
-    "polymer": "Polymer/polymer#>=1.0.0",
+    "polymer": "~1.4",
     "dom-bind-notifier": "*",
     "fast-json-patch": "~0.5.4",
     "json-patch-queue": "PuppetJs/JSON-Patch-queue#gh-pages",
     "json-patch-ot": "PuppetJs/JSON-Patch-OT#gh-pages",
-    "json-patch-ot-agent": "PuppetJs/JSON-Patch-OT-agent#gh-pages"
+    "json-patch-ot-agent": "PuppetJs/JSON-Patch-OT-agent#gh-pages",
+    "web-component-tester": "^4.2.2"
   }
 }
