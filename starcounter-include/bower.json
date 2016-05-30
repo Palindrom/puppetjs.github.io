@@ -1,0 +1,33 @@
+{
+  "name": "starcounter-include",
+  "authors": [
+    "Tomek Wytrebowicz <tomalecpub@gmail.com>"
+  ],
+  "homepage": "https://github.com/Starcounter/starcounter-include",
+  "description": "Custom Element to include HTML partials/templates from Starcounter",
+  "main": "starcounter-include.html",
+  "keywords": [
+    "template",
+    "partial",
+    "starcounter",
+    "imported-template",
+    "web-components"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "StaticFiles/sys",
+    "Gruntfile.js",
+    "test",
+    "wct.conf.json"
+  ],
+  "dependencies": {
+    "imported-template": ">=1.3.0"
+  },
+  "devDependencies": {
+    "web-component-tester": "Polymer/web-component-tester#>=4.2.2",
+    "polymer": "^1.3.1"
+  }
+}

@@ -10,6 +10,12 @@
     "json-patch-ot-agent": "PuppetJs/JSON-Patch-OT-agent#gh-pages",
     "web-component-tester": "^4.2.2",
     "jasmine-core": "jasmine#^2.4.1",
-    "jasmine-ajax": "^3.2.0"
+    "jasmine-ajax": "^3.2.0",
+    "iron-component-page": "polymerelements/iron-component-page#^1.0.0",
+    "iron-image": "polymerelements/iron-image#^1.0.0",
+    "paper-styles": "polymerelements/paper-styles#^1.0.0",
+    "test-fixture": "polymerelements/test-fixture#^1.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
+    "starcounter-include": "Starcounter/starcounter-include#gh-pages"
   }
 }
